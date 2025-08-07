@@ -67,9 +67,18 @@ const App = () => {
   };
 
   const getAPiData = async () => {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/todos/")
-    setData(res.data)
-  }
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/todos/");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    }
+  };
 
   useEffect(() => {
     getAPiData()
