@@ -5,13 +5,13 @@ import axios from "axios";
 
 const App = () => {
 
-  // const [formData, setFormData] = useState({
-  //   // phone: "",
-  //   email: "",
-  //   password: ""
-  // })
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [formData, setFormData] = useState({
+    // phone: "",
+    email: "",
+    password: ""
+  })
+  // const [email, setEmail] = useState("")
+  // const [password, setPassword] = useState("")
 
   const [data, setData] = useState([])
 
@@ -20,22 +20,16 @@ const App = () => {
     const { name, value } = e.target;
 
 
-    // setFormData((prev) => ({
-    //   ...prev,
-    //   [name]: value
-    // }))
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }))
 
     // setFormData({
     //   ...formData,
     //   [name]: value
     // })
 
-    if (name === "email") {
-      setEmail(value)
-    }
-    else {
-      setPassword(value)
-    }
 
   }
 
@@ -45,10 +39,8 @@ const App = () => {
       const data = { email: email, password: password }
       const response = await axios.post("http://localhost:5000/api/auth/login", data);
       if (response?.data.status) {
-
-        setEmail("")
-        setPassword("")
-
+        // setEmail("")
+        // setPassword("")
         alert(response?.data.message)
       }
     } catch (error) {
@@ -90,8 +82,8 @@ const App = () => {
         <div className="" style={cssStyle.form.div}>
           {/* <input type="text" value={formData.name} name="name" onChange={handleChange} placeholder='name' required />
           <input type="number" value={formData.phone} name="phone" onChange={handleChange} placeholder='phone' required /> */}
-      {/* <input type="email" value={email} name="email" onChange={handleChange} placeholder='email' required />
-          <input type="password" value={password} name="password" onChange={handleChange} placeholder='password' required />
+      {/* <input type="email" value={formData.email} name="email" onChange={handleChange} placeholder='email' required />
+          <input type="password" value={formData.password} name="password" onChange={handleChange} placeholder='password' required />
           <button type='submit'>Submit</button>
         </div> */}
       {/* </form> */}
