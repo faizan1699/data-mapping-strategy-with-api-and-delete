@@ -96,7 +96,7 @@ const App = () => {
           <input type="password" value={password} name="password" onChange={handleChange} placeholder='password' required />
           <button type='submit'>Submit</button>
         </div> */}
-      {/* // </form> */}
+      {/* </form> */}
 
 
       <button onClick={getAPiData}>get APi data</button>
