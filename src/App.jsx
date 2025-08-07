@@ -37,8 +37,14 @@ const App = () => {
     e.preventDefault();
     try {
       const data = { email: email, password: password }
-      const response = await axios.post("http://localhost:5000/api/auth/login", data);
-      if (response?.data.status) {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+       if (response?.data.status) {
         // setEmail("")
         // setPassword("")
         alert(response?.data.message)
