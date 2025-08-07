@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import axios from "axios";
+// import axios from "axios";
 
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
         },
         body: JSON.stringify(data)
       });
-       if (response?.data.status) {
+      if (response?.data.status) {
         // setEmail("")
         // setPassword("")
         alert(response?.data.message)
