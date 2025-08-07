@@ -36,13 +36,13 @@ const App = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = { email: email, password: password }
+
       const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(formData)
       });
       if (response?.data.status) {
         // setEmail("")
@@ -93,15 +93,15 @@ const App = () => {
 
   return (
     <div >
-      {/* <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <div className="" style={cssStyle.form.div}>
           {/* <input type="text" value={formData.name} name="name" onChange={handleChange} placeholder='name' required />
           <input type="number" value={formData.phone} name="phone" onChange={handleChange} placeholder='phone' required /> */}
-      {/* <input type="email" value={formData.email} name="email" onChange={handleChange} placeholder='email' required />
+          <input type="email" value={formData.email} name="email" onChange={handleChange} placeholder='email' required />
           <input type="password" value={formData.password} name="password" onChange={handleChange} placeholder='password' required />
           <button type='submit'>Submit</button>
-        </div> */}
-      {/* </form> */}
+        </div>
+      </form >
 
       <button onClick={getAPiData}>get APi data</button>
 
