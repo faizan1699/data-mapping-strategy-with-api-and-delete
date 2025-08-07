@@ -87,9 +87,7 @@ const App = () => {
   return (
     <div >
       {/* <form onSubmit={onSubmit}>
-
         <div className="" style={cssStyle.form.div}>
-
           {/* <input type="text" value={formData.name} name="name" onChange={handleChange} placeholder='name' required />
           <input type="number" value={formData.phone} name="phone" onChange={handleChange} placeholder='phone' required /> */}
       {/* <input type="email" value={email} name="email" onChange={handleChange} placeholder='email' required />
@@ -97,7 +95,6 @@ const App = () => {
           <button type='submit'>Submit</button>
         </div> */}
       {/* </form> */}
-
 
       <button onClick={getAPiData}>get APi data</button>
 
